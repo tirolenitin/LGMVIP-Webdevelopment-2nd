@@ -1,38 +1,182 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap");
+
+.app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: 0.2s linear;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 5rem;
+}
+body {
+  font-family: "Lora", serif;
+  background: rgb(10, 173, 92);
+}
+
+.navbar {
+  display: flex;
+  padding: 0 7%;
+  height: 10rem;
+  width: 100%;
+  align-items: center;
+  background-color: antiquewhite;
+  border-bottom: 2px solid black;
+  justify-content: space-between;
+}
+
+.navbar a {
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: black;
+}
+.navbar a:hover {
+  color: red;
+  border-bottom: 0.1rem solid red;
+  padding-bottom: 0.5rem;
+  transition: 0.2s linear;
+}
+.navbar .btn {
+  display: inline-block;
+  padding: 0.9rem 1rem;
+  font-size: 1.7rem;
+  color: black;
+  cursor: pointer;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn:hover {
+  letter-spacing: 0.2rem;
+  color: red;
+  border: 0.1rem solid black;
+  transition: 0.2s linear;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  gap: 1.5rem;
+  background: linear-gradient(#cfd9df, #e2ebf0);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.box::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.card {
+  
+  margin: 2rem;
+  border: 1px solid gray;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 3rem 2rem;
+  border-radius: 5rem;
+  background: linear-gradient(#ffd89b, #19547b);
+  transition: width 2s, height 4s , transform 2s;
+  
+}
+.card:hover{
+  transform: skew(5deg);
+  
+}
+.card .avatar {
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+.card .avatar:hover{
+  height: 11rem;
+  width: 11rem;
+}
+.card-description {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: black;
+  padding: 2rem 0;
+
+}
+.card-description h2 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+.card-description p{
+  font-size: 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  border: .1rem solid gray;
+  border-top: .2rem solid black;
+  animation: rotate 2.5s infinite linear;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes rotate {
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+      transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+
+
+
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(#bdc3c7, #2c3e50);
+}
+.content h3 {
+  font-size: 5rem;
+}
+.content p {
+  font-size: 3rem;
+}
+@media (max-width:991px){
+
+  html{
+      font-size: 55%;
+  }
+
+  .navbar{
+      padding:1.5rem 2rem;
+  }
+
+  section{
+      padding:2rem;
+  }
+
 }
